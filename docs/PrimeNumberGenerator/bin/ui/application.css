@@ -1,0 +1,19 @@
+/* JavaFX CSS - Leave this comment until you have at least cr
+ * eate one rule which uses -fx-Property
+ */
+ #pane{
+	-fx-background-image:url(../../mda/images/background.gif);
+  	-fx-background-position:center;
+  	-fx-background-repeat: no-repeat;
+  	-fx-background-color:#030303;
+}
+
+.label{
+	-fx-text-fill:linear-gradient(to right, Yellow, DarkOrange, Red, DarkViolet, Blue, Lime);
+	-fx-font-family:Impact;
+	-fx-font-size:50;
+	-fx-font-weight:bold;
+	-fx-text-alignment: center;
+}
+ 
+ 
