@@ -19,7 +19,12 @@ public class MainWindowController {
 
     @FXML
     void generate(ActionEvent event) {
-
+    	
+    }
+    
+    @FXML
+    void initialize() {
+    	
     }
 
 }
