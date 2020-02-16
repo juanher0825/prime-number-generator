@@ -4,28 +4,50 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import exceptions.OffTheLimitException;
+
 class GeneratorTest {
 	Generator g;
 	private void setupScenario1() {
-		g = new Generator(9);
+		try {
+			g = new Generator(9);
+		} catch (OffTheLimitException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	
 
 
 	private void setupScenario2() {
-		g = new Generator(18);
+		try {
+			g = new Generator(18);
+		} catch (OffTheLimitException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	
 	
 	private void setupScenario3() {
-		g = new Generator(74);
+		try {
+			g = new Generator(74);
+		} catch (OffTheLimitException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	
 	private void setupScenario4() {
-		g = new Generator(45);
+		try {
+			g = new Generator(45);
+		} catch (OffTheLimitException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	
