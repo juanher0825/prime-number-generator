@@ -2,7 +2,7 @@
  * eate one rule which uses -fx-Property
  */
  #pane{
-	-fx-background-image:url(../../mda/images/background.gif);
+	-fx-background-image:url(../../imgs/images/fire.gif);
   	-fx-background-position:center;
   	-fx-background-repeat: no-repeat;
   	-fx-background-color:#030303;
@@ -16,4 +16,34 @@
 	-fx-text-alignment: center;
 }
  
+ #leibol{
+ 	-fx-text-fill:linear-gradient(to right, Yellow, DarkOrange, Red, DarkViolet, Blue, Lime);
+	-fx-font-family:Impact;
+	-fx-font-size:30;
+	-fx-font-weight:bold;
+	-fx-text-alignment: center;
+ }
+ 
+ #field{
+ 	-fx-position-shape: center;
+ }
+ .button{
+	text:white;
+	border:white;
+	background:transparent;
+	
+	-fx-background-color:background;
+	-fx-text-fill:text;
+	-fx-border-color:border;
+	
+	-fx-font-family:Impact;
+	-fx-font-size:20;
+	-fx-font-weight:bold;
+	
+	-fx-background-position:center;
+  	-fx-background-repeat: no-repeat;
+  	
+}
+.button:hover{background:linear-gradient(to bottom right, Blue, transparent);}
+.button:pressed{background:linear-gradient(to bottom right, Indigo, transparent);}
  

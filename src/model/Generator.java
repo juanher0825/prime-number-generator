@@ -66,7 +66,7 @@ public class Generator {
 		return this.n;
 	}
 
-<<<<<<< HEAD
+
 	//this method is used to ensure that
 	//the matrix that will be printed
 	//will be as squared as possible
@@ -85,7 +85,6 @@ public class Generator {
 	return distribution;
 	}
 
-=======
 	/////////////////////////////////////////////////////////////////////////////////
 	public ArrayList<Integer> betwiseSieve(int n) {
 
@@ -182,5 +181,5 @@ public class Generator {
 		return primes;
 	}
 /////////////////////////////////////////////////////////////////////////////////////////
->>>>>>> 395a601d9675c56f1055cfe3d73aa16e6c1252a7
+
 }
