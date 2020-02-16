@@ -48,18 +48,27 @@ public class MatrixVisualizerWindowController {
     	showFields();
     }
     
+    
+    //this function displays the matrix of numbers
+    //starting in 1 until n.
+    //Creates a Gridpane dinamically and fills it 
+    //up with buttons
     public void showFields() {
     	int [][] fields =new int[rows][columns];
 		grid=new GridPane();
 		pane.setCenter(grid);
+		
+		//filler is a variable that is used
+		//to set the text of each one of the
+		//buttons within the matrix
 		int filler =1;
 		
-		for(int x=0; x<fields.length; x++){//Filas
+		for(int x=0; x<fields.length; x++){//Rows
 			RowConstraints row=new RowConstraints();
 			row.setVgrow(Priority.ALWAYS);
 			grid.getRowConstraints().add(row);
 		}
-		for(int y=0; y<fields[0].length; y++){//Columnas
+		for(int y=0; y<fields[0].length; y++){//Columns
 			ColumnConstraints column=new ColumnConstraints();
 			column.setHgrow(Priority.ALWAYS);
 			grid.getColumnConstraints().add(column);

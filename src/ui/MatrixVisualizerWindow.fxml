@@ -12,7 +12,7 @@
          <children>
             <Button fx:id="Prime1_btn" mnemonicParsing="false" onAction="#Prime1" styleClass="buttonA" text="Algorithm1">
                <VBox.margin>
-                  <Insets bottom="50.0" left="10.0" right="30.0" top="30.0" />
+                  <Insets bottom="50.0" left="10.0" top="30.0" />
                </VBox.margin>
             </Button>
             <Button fx:id="Prime2_btn" mnemonicParsing="false" onAction="#Prime2" prefHeight="30.0" prefWidth="122.0" styleClass="buttonA" text="Algorithm2">
@@ -36,11 +36,11 @@
          </BorderPane.margin>
       </VBox>
    </left>
-   <center>
+   <top>
       <Label id="#leibol" styleClass="leibol" stylesheets="@application.css" text="Prime generating algorithms" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets left="10.0" top="15.0" />
          </BorderPane.margin>
       </Label>
-   </center>
+   </top>
 </BorderPane>

@@ -1,6 +1,7 @@
 package ui;
 
 
+import exceptions.OffTheLimitException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,7 +28,12 @@ public class MainWindowController {
 
     @FXML
     private Button button;
-
+    
+    
+    //this function procceses the user input, creates
+    //a Generator type object and passes the input to  
+    //the next scene where the matrix will be created and displayed 
+    //according to the input.
     @FXML
     void generate(ActionEvent event) {
     	try {
@@ -49,35 +55,23 @@ public class MainWindowController {
     		alert.setContentText("Please type an integer and try again!");
     		txtField.clear();
     		alert.showAndWait();
-    	}
+    	} catch (OffTheLimitException e) {//if n is greater than 121
+    		Alert alert = new Alert(AlertType.WARNING);
+    		alert.setTitle("Warning ");
+    		alert.setHeaderText("Your input is too big");
+    		alert.setContentText(e.getMessage());
+    		txtField.clear();
+    		alert.showAndWait();
+		}
     }
     
-//    private void load(ActionEvent event, int r, int c) {
-//    	try {
-//    		System.out.println("entraaaa");
-//			FXMLLoader loader=new FXMLLoader(getClass().getResource("MatrixWindow.fxml"));
-//			Parent root = (Parent) loader.load();
-//			root.getStylesheets().add("application.css");//CSS
-//			
-//			MatrixWindowController nextController=loader.getController();
-//			nextController.setDimenssions(c,r);
-//			
-//			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//			stage.setScene(new Scene(root));
-//			
-//		
-//		}
-//		catch (Exception ex) {
-//			ex.printStackTrace();
-//		}
-//		
-//		
-//	}
+
     
-    
+    //this method loads the scene where the matrix will be displayed
+    //and shows it in the same window.
     private void load(ActionEvent event, int r, int c, int n) {
     	try {
-    		System.out.println("entraaaa");
+    		
 			FXMLLoader loader=new FXMLLoader(getClass().getResource("MatrixVisualizerWindow.fxml"));
 			Parent root = (Parent) loader.load();
 			root.getStylesheets().add("application.css");//CSS

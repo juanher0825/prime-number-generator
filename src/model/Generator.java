@@ -4,12 +4,20 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import exceptions.OffTheLimitException;
+
 public class Generator {
 
 	private int n;
 
-	public Generator(int n) {
-		this.n = n;
+	public Generator(int n) throws OffTheLimitException {
+		if (n>121) {
+			throw new OffTheLimitException("The input must be lesser or equal than 121");
+			
+		}else {
+			this.n = n;
+		}
+		
 	}
 
 	// PRIME NUMBER GENERATOR #1
@@ -70,7 +78,7 @@ public class Generator {
 	//this method is used to ensure that
 	//the matrix that will be printed
 	//will be as squared as possible
-	public int[] matrixDistribution(){
+	public int[] matrixDistribution() {
 	int []distribution = new int [2]; 
 	int ceiling = (int) Math.ceil(Math.sqrt(this.n));
 	int floor = (int) Math.floor(Math.sqrt(this.n));
