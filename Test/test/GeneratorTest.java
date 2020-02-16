@@ -20,14 +20,16 @@ class GeneratorTest {
 	
 	
 	private void setupScenario3() {
-		g = new Generator(17);
+		g = new Generator(74);
 		
 	}
+	
+	private void setupScenario4() {
+		g = new Generator(45);
+		
+	}
+	
 
-	@Test
-	void testGenerator() {
-		
-	}
 
 	@Test
 	void testIsPrime() {
@@ -74,22 +76,63 @@ class GeneratorTest {
 		assertEquals(b, a);
 	}
 	
-	//when n = 9
+	//when n == 9
 	@Test
-	void testSizeOfMatrix() {
+	void matrixDistributionTest() {
 		setupScenario1();
-		int b = g.sizeOfMatrix();
+		int [] size = g.matrixDistribution();
 		int a = 3;
-		assertEquals(a, b);
+		int b = 3;
+		int aa = size[0];
+		int bb = size[1];
+		
+		assertEquals(a  , aa);
+		assertEquals(b , bb);
 	}
 	
-	//when n = 18
-	@Test
-	void testSizeOfMatrix2() {
-		setupScenario2();
-		int b = g.sizeOfMatrix();
-		int a = 5;
-		assertEquals(a, b);
-	}
+	//when n == 18
+		@Test
+		void matrixDistributionTest2() {
+			setupScenario2();
+			int [] size = g.matrixDistribution();
+			int a = 5;
+			int b = 4;
+			int aa = size[0];
+			int bb = size[1];
+			
+			assertEquals(a  , aa);
+			assertEquals(b , bb);
+		}
+		
+				//when n == 45
+				@Test
+				void matrixDistributionTest3() {
+					setupScenario4();
+					int [] size = g.matrixDistribution();
+					int a = 8	;
+					int b = 6;
+					int aa = size[0];
+					int bb = size[1];
+					
+					assertEquals(a  , aa);
+					assertEquals(b , bb);
+				}
+				
+				//when n == 74
+				//in this case the ceiling
+				//will be added 1.
+				@Test
+				void matrixDistributionTest4() {
+					setupScenario3();
+					int [] size = g.matrixDistribution();
+					int a = 10	;
+					int b = 8;
+					int aa = size[0];
+					int bb = size[1];
+					
+					assertEquals(a  , aa);
+					assertEquals(b , bb);
+				}
+
 
 }

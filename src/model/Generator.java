@@ -58,19 +58,30 @@ public class Generator {
 		return amnt;
 	}
 
-	// this method returns an integer that
-	// represents the order of the matrix
-	// it returns the ceiling of the square root
-	// of n in order to make the matrix
-	// as squared as possible.
-	public int sizeOfMatrix() {
-		return (int) Math.ceil(Math.sqrt(n));
-	}
+
 
 	// this method returns n
 	public int getN() {
 
 		return this.n;
+	}
+
+	//this method is used to ensure that
+	//the matrix that will be printed
+	//will be as squared as possible
+	public int[] matrixDistribution(){
+	int []distribution = new int [2]; 
+	int ceiling = (int) Math.ceil(Math.sqrt(this.n));
+	int floor = (int) Math.floor(Math.sqrt(this.n));
+
+	if ( (ceiling * floor)  <this.n){
+		ceiling +=1;
+	}
+
+	distribution[0]= ceiling;
+	distribution[1]= floor;
+
+	return distribution;
 	}
 
 }
