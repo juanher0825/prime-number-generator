@@ -45,7 +45,7 @@ class GeneratorTest {
 		try {
 			g = new Generator(45);
 		} catch (OffTheLimitException e) {
-			// TODO Auto-generated catch block
+			// TODO Auto-generatclaed catch block
 			e.printStackTrace();
 		}
 		

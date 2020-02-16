@@ -70,6 +70,16 @@
   	-fx-background-repeat: no-repeat;
   	
 }
+
+.prime{
+	-fx-background-color:green ;
+  	-fx-background-size:100% 100%;
+}
+
+.compound{
+	-fx-background-color:green ;
+  	-fx-background-size:100% 100%;
+}
 .button:hover{background:linear-gradient(to bottom right, Blue, transparent);}
 .button:pressed{background:linear-gradient(to bottom right, Indigo, transparent);}
  

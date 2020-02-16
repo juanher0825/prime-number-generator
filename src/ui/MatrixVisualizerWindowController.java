@@ -39,12 +39,14 @@ public class MatrixVisualizerWindowController {
     private Button Back_btn;
     
     private GridPane grid;
+    private Button[][] butons;
     
   //Set
     public void setDimenssions(int c ,int  r, int n){
     	this.n = n;
     	columns = c;
     	rows = r;
+    	butons = new  Button [r][c];
     	showFields();
     }
     
@@ -87,7 +89,11 @@ public class MatrixVisualizerWindowController {
 					field.setText("");
 				}
 				
-				grid.add(field, y, x);
+				butons [x][y] = field;
+			
+
+				grid.add(butons[x][y], y, x);
+				
 				filler++;
 			}
 		}
