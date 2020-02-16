@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane id="pane" fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.MatrixVisualizerWindowController">
+   <left>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="Prime1_btn" mnemonicParsing="false" onAction="#Prime1" styleClass="buttonA" text="Algorithm1">
+               <VBox.margin>
+                  <Insets bottom="50.0" left="10.0" right="30.0" top="30.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="Prime2_btn" mnemonicParsing="false" onAction="#Prime2" prefHeight="30.0" prefWidth="122.0" styleClass="buttonA" text="Algorithm2">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="Prime3_btn" lineSpacing="100.0" mnemonicParsing="false" onAction="#Prime3" prefHeight="30.0" prefWidth="98.0" styleClass="buttonA" text="Algorithm3">
+               <VBox.margin>
+                  <Insets bottom="80.0" left="10.0" top="50.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="Back_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#Back" styleClass="buttonA" text="Back">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets left="5.0" />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <top>
+      <Label id="#leibol" styleClass="leibol" stylesheets="@application.css" text="Prime generating algorithms" BorderPane.alignment="CENTER_LEFT">
+         <BorderPane.margin>
+            <Insets left="10.0" top="15.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+</BorderPane>
