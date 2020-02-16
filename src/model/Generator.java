@@ -88,7 +88,7 @@ public class Generator {
 	/////////////////////////////////////////////////////////////////////////////////
 	public ArrayList<Integer> betwiseSieve(int n) {
 
-		ArrayList<Integer> primes = new ArrayList<>();
+		ArrayList<Integer> primes = new ArrayList<Integer>();
 
 		// prime[i] is going to store true if
 		// if i*2 + 1 is composite.
@@ -119,7 +119,7 @@ public class Generator {
 	////////////////////////////////////////////////////////////////////////////////////
 	public ArrayList<Integer> SieveOfSundaram(int n) {
 
-		ArrayList<Integer> prime = new ArrayList<>();
+		ArrayList<Integer> prime = new ArrayList<Integer>();
 
 		// In general Sieve of Sundaram, produces
 		// primes smaller than (2*x + 2) for a number
@@ -155,7 +155,7 @@ public class Generator {
 	////////////////////////////////////////////////////////////////////////////////////
 	public ArrayList<Integer> sieveOfEratosthenes(int n) {
 
-		ArrayList<Integer> primes = new ArrayList<>();
+		ArrayList<Integer> primes = new ArrayList<Integer>();
 
 		// Create a boolean array "prime[0..n]" and initialize
 		// all entries it as true. A value in prime[i] will
