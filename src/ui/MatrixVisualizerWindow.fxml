@@ -36,11 +36,11 @@
          </BorderPane.margin>
       </VBox>
    </left>
-   <top>
-      <Label id="#leibol" styleClass="leibol" stylesheets="@application.css" text="Prime generating algorithms" BorderPane.alignment="CENTER_LEFT">
+   <center>
+      <Label id="#leibol" styleClass="leibol" stylesheets="@application.css" text="Prime generating algorithms" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets left="10.0" top="15.0" />
          </BorderPane.margin>
       </Label>
-   </top>
+   </center>
 </BorderPane>

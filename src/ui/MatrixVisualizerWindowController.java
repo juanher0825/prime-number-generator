@@ -72,7 +72,11 @@ public class MatrixVisualizerWindowController {
 				Button field=new Button();
 				field.setMaxWidth(Double.MAX_VALUE);
 				field.setMaxHeight(Double.MAX_VALUE);
-				field.setText(filler+"");
+				if (filler<=n) {
+					field.setText(filler+"");
+				}else {
+					field.setText("");
+				}
 				
 				grid.add(field, y, x);
 				filler++;
