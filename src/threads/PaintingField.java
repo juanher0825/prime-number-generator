@@ -21,15 +21,15 @@ public class PaintingField extends Thread{
 	
 	public void run() {
 		System.out.println("Entra al Hilo" + " " + contador + mv.getN());
-		while(contador < mv.getN()) {
+		while(contador <= mv.getN()) {
 			System.out.println(contador);
-			mv.paint(a.betwiseSieve(mv.getN()), contador);
-			contador++;
+			mv.paint(a.betwiseSieve(mv.getN()), mv.getButons());
 			try {
-				sleep(100);
+				sleep(2000);
 			}catch (InterruptedException e) {
 				e.printStackTrace();
-			}
+			
+		}
 		}
 	}
 	

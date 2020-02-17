@@ -154,7 +154,7 @@ public class MatrixVisualizerWindowController {
 
     @FXML
     void Prime2(ActionEvent event) {
-
+    	//butons[0][0].setStyle("-fx-background-color: Red");
     }
 
     @FXML
@@ -166,16 +166,28 @@ public class MatrixVisualizerWindowController {
     	g = a;
     }
     
-    public void paint(ArrayList<Integer> a, int b) {
+    public Button[][] getButons() {
+		return butons;
+	}
+
+
+	public void setButons(Button[][] butons) {
+		this.butons = butons;
+	}
+
+
+	public void paint(ArrayList<Integer> a, Button z[][]) {
     	//button.setStyle("-fx-background-color: #ff0000; ");
-    	int index = b;
     	
-    	for(int i = 0; i<=a.size(); i++) {
-    		if(a.get(i) == 17) {
-    			System.out.println("Verde");
-    		}else {
-    			System.out.println("Rojo");
-    		}
+    	for(int i = 0; i<=a.size()-1; i++) {
+    		for (int j = 0; j < z.length; j++) {
+				for (int k = 0; k < z[j].length; k++) {
+					if(Integer.parseInt(z[j][k].getText()) == a.get(i)) {
+						System.out.println("");
+						butons[j][k].setStyle("-fx-background-color: Green");
+					}
+				}
+			}
     	}
     	
     }
