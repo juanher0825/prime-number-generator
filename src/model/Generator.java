@@ -1,19 +1,23 @@
 package model;
 
 import java.util.ArrayList;
+
 import java.util.Arrays;
 import java.util.List;
 
+import exceptions.BelowTheLimitException;
 import exceptions.OffTheLimitException;
 
 public class Generator {
 
 	private int n;
 
-	public Generator(int n) throws OffTheLimitException {
+	public Generator(int n) throws OffTheLimitException, BelowTheLimitException {
 		if (n>121) {
 			throw new OffTheLimitException("The input must be lesser or equal than 121");
 			
+		}else if(n<1){
+			throw new BelowTheLimitException("The input must greater or equal than 1");
 		}else {
 			this.n = n;
 		}

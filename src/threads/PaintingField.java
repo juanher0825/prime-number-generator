@@ -1,6 +1,7 @@
 package threads;
 
 import ui.MatrixVisualizerWindowController;
+import exceptions.BelowTheLimitException;
 import exceptions.OffTheLimitException;
 import model.*;
 
@@ -13,8 +14,9 @@ public class PaintingField extends Thread {
 	private int contador;
 	
 	private int option;
-
-	public PaintingField(MatrixVisualizerWindowController mv, int n , int o) throws OffTheLimitException {
+	
+	
+	public PaintingField(MatrixVisualizerWindowController mv, int n , int o) throws OffTheLimitException, BelowTheLimitException {
 		this.mv = mv;
 		contador = 0;
 		option = o;
@@ -27,6 +29,7 @@ public class PaintingField extends Thread {
 		if (option == 1) {
 			System.out.println("Entra al Hilo" + " " + contador + mv.getN());
 			
+			
 
 				try {
 					System.out.println(contador);
@@ -36,6 +39,7 @@ public class PaintingField extends Thread {
 					e.printStackTrace();
 
 				}
+			
 			
 		}else if (option == 2) {
 			System.out.println("Entra al Hilo" + " " + contador + mv.getN());
@@ -66,13 +70,5 @@ public class PaintingField extends Thread {
 		
 	}
 
-	/*
-	 * public void run() { while(c) { r = mc.rigth(r); r = mc.left(r);
-	 * 
-	 * try { sleep(50); } catch (InterruptedException e) { // TODO Auto-generated
-	 * catch block e.printStackTrace(); }
-	 * 
-	 * 
-	 * }
-	 */
+	
 }

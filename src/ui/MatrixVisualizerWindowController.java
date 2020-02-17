@@ -5,6 +5,7 @@ import threads.PaintingField;
 
 import java.util.ArrayList;
 
+import exceptions.BelowTheLimitException;
 import exceptions.OffTheLimitException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -139,7 +140,7 @@ public class MatrixVisualizerWindowController {
 
 	// bitwise sieve
 	@FXML
-	void Prime1(ActionEvent event) throws OffTheLimitException {
+	void Prime1(ActionEvent event) throws OffTheLimitException, BelowTheLimitException {
 
 		pf = new PaintingField(this, getN(), 1);
 
@@ -149,7 +150,7 @@ public class MatrixVisualizerWindowController {
 
 	// sieve of sundaram
 	@FXML
-	void Prime2(ActionEvent event) throws OffTheLimitException {
+	void Prime2(ActionEvent event) throws OffTheLimitException, BelowTheLimitException {
 		// butons[0][0].setStyle("-fx-background-color: Red");
 		pf = new PaintingField(this, getN(), 2);
 
@@ -158,7 +159,7 @@ public class MatrixVisualizerWindowController {
 
 	// sieve of eratosthenes
 	@FXML
-	void Prime3(ActionEvent event) throws OffTheLimitException {
+	void Prime3(ActionEvent event) throws OffTheLimitException, BelowTheLimitException {
 		pf = new PaintingField(this, getN(), 3);
 
 		pf.start();
@@ -176,28 +177,7 @@ public class MatrixVisualizerWindowController {
 		this.butons = butons;
 	}
 
-//	public void paint(ArrayList<Integer> a, Button z[][]) {
-//		// button.setStyle("-fx-background-color: #ff0000; ");
-//
-//		for (int i = 0; i <= a.size() - 1; i++) {
-//			for (int j = 0; j < z.length; j++) {
-//				for (int k = 0; k < z[j].length; k++) {
-//					if (Integer.parseInt(z[j][k].getText()) == a.get(i)) {
-//						System.out.println(a.get(i));
-//						System.out.println(z[j][k].getText());
-//						butons[j][k].setStyle("-fx-background-color: Green");
-//					} else {
-//						System.out.println("rojo");
-//						System.out.println(a.get(i));
-//						System.out.println(z[j][k].getText());
-//						System.out.println();
-//						butons[j][k].setStyle("-fx-background-color: Red");
-//					}
-//				}
-//			}
-//		}
-//
-//	}
+
 
 	public void paint(ArrayList<Integer> a, Button z[][]) {
 		// button.setStyle("-fx-background-color: #ff0000; ");
@@ -227,6 +207,7 @@ public class MatrixVisualizerWindowController {
 	
 	@FXML
     void clear(ActionEvent event) {
+		
 		for (int i = 0; i<butons.length;i++) {
 			for (int j = 0; j < butons[0].length; j++) {
 				butons[i][j].setStyle("-fx-background-color: Transparent");

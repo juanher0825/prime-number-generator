@@ -1,6 +1,7 @@
 package ui;
 
 
+import exceptions.BelowTheLimitException;
 import exceptions.OffTheLimitException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -61,6 +62,13 @@ public class MainWindowController {
     		Alert alert = new Alert(AlertType.WARNING);
     		alert.setTitle("Warning ");
     		alert.setHeaderText("Your input is too big");
+    		alert.setContentText(e.getMessage());
+    		txtField.clear();
+    		alert.showAndWait();
+		} catch (BelowTheLimitException e) {
+			Alert alert = new Alert(AlertType.WARNING);
+    		alert.setTitle("Warning ");
+    		alert.setHeaderText("Your input is too small");
     		alert.setContentText(e.getMessage());
     		txtField.clear();
     		alert.showAndWait();
