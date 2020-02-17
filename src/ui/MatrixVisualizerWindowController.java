@@ -37,6 +37,9 @@ public class MatrixVisualizerWindowController {
 	private BorderPane pane;
 
 	@FXML
+	private Button clr;
+
+	@FXML
 	private Button Prime1_btn;
 
 	@FXML
@@ -134,29 +137,29 @@ public class MatrixVisualizerWindowController {
 		return n;
 	}
 
-	//bitwise sieve
+	// bitwise sieve
 	@FXML
 	void Prime1(ActionEvent event) throws OffTheLimitException {
 
-		pf = new PaintingField(this, getN(),1);
+		pf = new PaintingField(this, getN(), 1);
 
 		pf.start();
 
 	}
 
-	//sieve of sundaram
+	// sieve of sundaram
 	@FXML
 	void Prime2(ActionEvent event) throws OffTheLimitException {
 		// butons[0][0].setStyle("-fx-background-color: Red");
-		pf = new PaintingField(this, getN(),2);
+		pf = new PaintingField(this, getN(), 2);
 
 		pf.start();
 	}
 
-	//sieve of eratosthenes
+	// sieve of eratosthenes
 	@FXML
 	void Prime3(ActionEvent event) throws OffTheLimitException {
-		pf = new PaintingField(this, getN(),3);
+		pf = new PaintingField(this, getN(), 3);
 
 		pf.start();
 	}
@@ -195,28 +198,36 @@ public class MatrixVisualizerWindowController {
 //		}
 //
 //	}
-	
-	
+
 	public void paint(ArrayList<Integer> a, Button z[][]) {
 		// button.setStyle("-fx-background-color: #ff0000; ");
 		int count = 0;
-		for (int i = 0; i <z.length;i++) {
-			for (int j = 0; j<z[0].length;j++) {
+		for (int i = 0; i < z.length; i++) {
+			for (int j = 0; j < z[0].length; j++) {
 				try {
 					if (Integer.parseInt(z[i][j].getText()) == a.get(count)) {
 						butons[i][j].setStyle("-fx-background-color: Green");
 						count++;
-					}else {
+					} else {
 						butons[i][j].setStyle("-fx-background-color: Red");
 					}
-				}catch(IndexOutOfBoundsException e) {
+				} catch (IndexOutOfBoundsException e) {
 					butons[i][j].setStyle("-fx-background-color: Red");
 					continue;
 				}
 			}
 		}
-		
+
 	}
+	
+	@FXML
+    void clear(ActionEvent event) {
+		for (int i = 0; i<butons.length;i++) {
+			for (int j = 0; j < butons[0].length; j++) {
+				butons[i][j].setStyle("-fx-background-color: Transparent");
+			}
+		}
+    }
 
 	@FXML
 
