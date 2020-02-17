@@ -59,7 +59,6 @@ public class Generator {
 		int amnt = 0;
 		for (int i = 2; i <= this.n; i++) {
 			if (isPrime(i)) {
-				System.out.println(i);
 				amnt++;
 			}
 		}
