@@ -1,4 +1,10 @@
 package ui;
+import model.*;
+import threads.PaintingField;
+
+import java.util.ArrayList;
+
+import exceptions.OffTheLimitException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +25,14 @@ public class MatrixVisualizerWindowController {
 	private int rows = 0;
 	private int columns = 0;
 	private int n = 0;
+	
+	private int contador;
+	
+	private Generator g;
+	
+	private PaintingField pf;
+	
+	
 	
 	@FXML
 	private BorderPane pane;
@@ -54,6 +68,7 @@ public class MatrixVisualizerWindowController {
     //Creates a Gridpane dinamically and fills it 
     //up with buttons
     public void showFields() {
+    	
     	int [][] fields =new int[rows][columns];
 		grid=new GridPane();
 		pane.setCenter(grid);
@@ -115,11 +130,19 @@ public class MatrixVisualizerWindowController {
 		}
     }
     
+    public int getN() {
+    	return n;
+    }
+    
 
 	
 
     @FXML
-    void Prime1(ActionEvent event) {
+    void Prime1(ActionEvent event) throws OffTheLimitException {
+    	
+    	pf = new PaintingField(this, getN());
+    	
+    	pf.start();
 
     }
 
@@ -132,6 +155,32 @@ public class MatrixVisualizerWindowController {
     void Prime3(ActionEvent event) {
 
     }
+    
+    public void recibirscene(Generator a) {
+    	g = a;
+    }
+    
+    public void paint(ArrayList<Integer> a, int b) {
+    	//button.setStyle("-fx-background-color: #ff0000; ");
+    	int index = b;
+    	
+    	for(int i = 0; i<=a.size(); i++) {
+    		if(a.get(i) == 17) {
+    			System.out.println("Verde");
+    		}else {
+    			System.out.println("Rojo");
+    		}
+    	}
+    	
+    }
+    
+    
+    @FXML
+    
+    void initialize() {
+    }
+    
+    
 
 
 }

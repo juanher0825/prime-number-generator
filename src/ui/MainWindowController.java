@@ -20,6 +20,7 @@ import model.Generator;
 public class MainWindowController {
 
 	private Generator g;
+	
     @FXML
     private AnchorPane pane;
 
@@ -48,6 +49,7 @@ public class MainWindowController {
         	int c = matrixDimenssion[0];
         	System.out.println(r + " "+c );
         	load(event,r,c, n );
+        	
     	}catch(NumberFormatException e) {
     		Alert alert = new Alert(AlertType.WARNING);
     		alert.setTitle("Warning ");
@@ -78,9 +80,11 @@ public class MainWindowController {
 			
 			MatrixVisualizerWindowController nextController=loader.getController();
 			nextController.setDimenssions(c,r,n);
+			nextController.recibirscene(g);
 			
 			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 			stage.setScene(new Scene(root));
+			
 			
 		
 		}
