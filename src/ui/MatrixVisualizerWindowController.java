@@ -187,7 +187,7 @@ public class MatrixVisualizerWindowController {
 	public void paint(ArrayList<Integer> a, Button z[][]) {
 		// button.setStyle("-fx-background-color: #ff0000; ");
 		int count = 0;
-		
+		flag = true;
 		
 			for (int i = 0; i < z.length&&flag; i++) {
 				for (int j = 0; j < z[0].length&&flag; j++) {
