@@ -26,44 +26,44 @@ public class PaintingField extends Thread {
 	public void run() {
 		if (option == 1) {
 			System.out.println("Entra al Hilo" + " " + contador + mv.getN());
-			while (contador <= mv.getN()) {
+			
 
 				try {
 					System.out.println(contador);
 					mv.paint(a.betwiseSieve(mv.getN()), mv.getButons());
-					sleep(2000);
+					sleep(1000);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 
 				}
-			}
+			
 		}else if (option == 2) {
 			System.out.println("Entra al Hilo" + " " + contador + mv.getN());
-			while (contador <= mv.getN()) {
+			
 
 				try {
 					System.out.println(contador);
 					mv.paint(a.SieveOfSundaram(mv.getN()), mv.getButons());
-					sleep(2000);
+					sleep(1000);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 
 				}
-			}
+			
 		}else if (option ==3) {
 			System.out.println("Entra al Hilo" + " " + contador + mv.getN());
-			while (contador <= mv.getN()) {
+			
 
 				try {
 					System.out.println(contador);
 					mv.paint(a.sieveOfEratosthenes(mv.getN()), mv.getButons());
-					sleep(2000);
+					sleep(1000);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 
 				}
 			}
-		}
+		
 	}
 
 	/*

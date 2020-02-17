@@ -208,12 +208,17 @@ public class MatrixVisualizerWindowController {
 					if (Integer.parseInt(z[i][j].getText()) == a.get(count)) {
 						butons[i][j].setStyle("-fx-background-color: Green");
 						count++;
+						Thread.sleep(1000);
 					} else {
 						butons[i][j].setStyle("-fx-background-color: Red");
+						Thread.sleep(1000);
 					}
 				} catch (IndexOutOfBoundsException e) {
 					butons[i][j].setStyle("-fx-background-color: Red");
 					continue;
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
 			}
 		}
