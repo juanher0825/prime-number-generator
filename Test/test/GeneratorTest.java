@@ -2,6 +2,9 @@ package test;
 import model.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 
 import exceptions.OffTheLimitException;
@@ -12,7 +15,7 @@ class GeneratorTest {
 		try {
 			g = new Generator(9);
 		} catch (OffTheLimitException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		
@@ -24,7 +27,7 @@ class GeneratorTest {
 		try {
 			g = new Generator(18);
 		} catch (OffTheLimitException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		
@@ -35,7 +38,7 @@ class GeneratorTest {
 		try {
 			g = new Generator(74);
 		} catch (OffTheLimitException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		
@@ -45,7 +48,7 @@ class GeneratorTest {
 		try {
 			g = new Generator(45);
 		} catch (OffTheLimitException e) {
-			// TODO Auto-generatclaed catch block
+			
 			e.printStackTrace();
 		}
 		
@@ -157,4 +160,207 @@ class GeneratorTest {
 				}
 
 
+				
+				//when n = 9
+				//we compare that the method 
+				//returns a collection containing the first
+				//primes until n, in this case 
+				//the list must be {2,3,5,7,11,13,17}
+				@Test
+				void betwiseSieveTest() {
+					setupScenario2();
+					int n = g.getN();
+					List<Integer> pr = g.betwiseSieve(n);
+					List<Integer> pre = new ArrayList<Integer>();
+					pre.add(2);
+					pre.add(3);
+					pre.add(5);
+					pre.add(7);
+					pre.add(11);
+					pre.add(13);
+					pre.add(17);
+					assertEquals(pr.get(0), pre.get(0));
+					assertTrue(pr.equals(pre));
+				}
+				
+				//we compare that the method 
+				//returns a collection containing the first
+				//primes until n, in this case 
+				//the list must be {2,3,5,7,11,13,17,19,23,29,31,37,41,43}
+				@Test
+				void betwiseSieveTest2() {
+					setupScenario4();
+					int n = g.getN();
+					List<Integer> pr = g.betwiseSieve(n);
+					List<Integer> pre = new ArrayList<Integer>();
+					pre.add(2);
+					pre.add(3);
+					pre.add(5);
+					pre.add(7);
+					pre.add(11);
+					pre.add(13);
+					pre.add(17);
+					pre.add(19);
+					pre.add(23);
+					pre.add(29);
+					pre.add(31);
+					pre.add(37);
+					pre.add(41);
+					pre.add(43);
+					assertEquals(pr.get(0), pre.get(0));
+					assertTrue(pr.equals(pre));
+				}
+				
+				//we compare that the method 
+				//returns a collection containing the first
+				//primes until n, in this case 
+				//the list must be {2,3,5,7}
+				void betwiseSieveTest3() {
+					setupScenario1();
+					int n = g.getN();
+					List<Integer> pr = g.betwiseSieve(n);
+					List<Integer> pre = new ArrayList<Integer>();
+					pre.add(2);
+					pre.add(3);
+					pre.add(5);
+					pre.add(7);
+					
+					assertEquals(pr.get(0), pre.get(0));
+					assertTrue(pr.equals(pre));
+				}
+				
+				
+				//we compare that the method 
+				//returns a collection containing the first
+				//primes until n, in this case 
+				//the list must be {2,3,5,7,11,13,17}
+				@Test
+				void sieveOfSundaramTest(){
+					setupScenario2();
+					int n = g.getN();
+					List<Integer> pr = g.SieveOfSundaram(n);
+					List<Integer> pre = new ArrayList<Integer>();
+					pre.add(2);
+					pre.add(3);
+					pre.add(5);
+					pre.add(7);
+					pre.add(11);
+					pre.add(13);
+					pre.add(17);
+					assertEquals(pr.get(0), pre.get(0));
+					assertTrue(pr.equals(pre));
+				}
+				
+				//we compare that the method 
+				//returns a collection containing the first
+				//primes until n, in this case 
+				//the list must be {2,3,5,7,11,13,17,19,23,29,31,37,41,43}
+				@Test
+				void sieveOfSundaramTest2(){
+					setupScenario4();
+					int n = g.getN();
+					List<Integer> pr = g.SieveOfSundaram(n);
+					List<Integer> pre = new ArrayList<Integer>();
+					pre.add(2);
+					pre.add(3);
+					pre.add(5);
+					pre.add(7);
+					pre.add(11);
+					pre.add(13);
+					pre.add(17);
+					pre.add(19);
+					pre.add(23);
+					pre.add(29);
+					pre.add(31);
+					pre.add(37);
+					pre.add(41);
+					pre.add(43);
+					assertEquals(pr.get(0), pre.get(0));
+					assertTrue(pr.equals(pre));
+				}
+				
+				//we compare that the method 
+				//returns a collection containing the first
+				//primes until n, in this case 
+				//the list must be {2,3,5,7}
+				void sieveOfSundaramTest3() {
+					setupScenario1();
+					int n = g.getN();
+					List<Integer> pr = g.SieveOfSundaram(n);
+					List<Integer> pre = new ArrayList<Integer>();
+					pre.add(2);
+					pre.add(3);
+					pre.add(5);
+					pre.add(7);
+					
+					assertEquals(pr.get(0), pre.get(0));
+					assertTrue(pr.equals(pre));
+				}
+				
+				//we compare that the method 
+				//returns a collection containing the first
+				//primes until n, in this case 
+				//the list must be {2,3,5,7,11,13,17}
+				@Test
+				void sieveOfEratosthenesTest() {
+					setupScenario2();
+					int n = g.getN();
+					List<Integer> pr = g.sieveOfEratosthenes(n);
+					List<Integer> pre = new ArrayList<Integer>();
+					pre.add(2);
+					pre.add(3);
+					pre.add(5);
+					pre.add(7);
+					pre.add(11);
+					pre.add(13);
+					pre.add(17);
+					assertEquals(pr.get(0), pre.get(0));
+					assertTrue(pr.equals(pre));
+				}
+				
+				//we compare that the method 
+				//returns a collection containing the first
+				//primes until n, in this case 
+				//the list must be {2,3,5,7,11,13,17,19,23,29,31,37,41,43}
+				@Test
+				void sieveOfEratosthenesTest2() {
+					setupScenario4();
+					int n = g.getN();
+					List<Integer> pr = g.sieveOfEratosthenes(n);
+					List<Integer> pre = new ArrayList<Integer>();
+					pre.add(2);
+					pre.add(3);
+					pre.add(5);
+					pre.add(7);
+					pre.add(11);
+					pre.add(13);
+					pre.add(17);
+					pre.add(19);
+					pre.add(23);
+					pre.add(29);
+					pre.add(31);
+					pre.add(37);
+					pre.add(41);
+					pre.add(43);
+					assertEquals(pr.get(0), pre.get(0));
+					assertTrue(pr.equals(pre));
+				}
+				
+				//we compare that the method 
+				//returns a collection containing the first
+				//primes until n, in this case 
+				//the list must be {2,3,5,7}
+				void sieveOfEratosthenesTest3() {
+					setupScenario1();
+					int n = g.getN();
+					List<Integer> pr = g.sieveOfEratosthenes(n);
+					List<Integer> pre = new ArrayList<Integer>();
+					pre.add(2);
+					pre.add(3);
+					pre.add(5);
+					pre.add(7);
+					
+					assertEquals(pr.get(0), pre.get(0));
+					assertTrue(pr.equals(pre));
+				}
 }
