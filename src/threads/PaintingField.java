@@ -15,11 +15,13 @@ public class PaintingField extends Thread {
 	
 	private int option;
 	
+	private boolean flag;
 	
 	public PaintingField(MatrixVisualizerWindowController mv, int n , int o) throws OffTheLimitException, BelowTheLimitException {
 		this.mv = mv;
 		contador = 0;
 		option = o;
+		flag = true;
 		a = new Generator(n);
 	}
 
@@ -31,41 +33,31 @@ public class PaintingField extends Thread {
 			
 			
 
-				try {
+				
 					System.out.println(contador);
 					mv.paint(a.betwiseSieve(mv.getN()), mv.getButons());
-					sleep(1000);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-
-				}
+					
+			
 			
 			
 		}else if (option == 2) {
 			System.out.println("Entra al Hilo" + " " + contador + mv.getN());
 			
 
-				try {
+				
 					System.out.println(contador);
 					mv.paint(a.SieveOfSundaram(mv.getN()), mv.getButons());
-					sleep(1000);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-
-				}
+					
 			
 		}else if (option ==3) {
 			System.out.println("Entra al Hilo" + " " + contador + mv.getN());
 			
 
-				try {
+				
 					System.out.println(contador);
 					mv.paint(a.sieveOfEratosthenes(mv.getN()), mv.getButons());
-					sleep(1000);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-
-				}
+				
+				
 			}
 		
 	}

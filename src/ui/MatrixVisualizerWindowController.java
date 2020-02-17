@@ -54,9 +54,13 @@ public class MatrixVisualizerWindowController {
 
 	@FXML
 	private Button Back_btn;
-
+	
+	//this grid displays the 
+	//matrix
 	private GridPane grid;
+	
 	private Button[][] butons;
+	boolean flag;
 
 	// Set
 	public void setDimenssions(int c, int r, int n) {
@@ -64,6 +68,7 @@ public class MatrixVisualizerWindowController {
 		columns = c;
 		rows = r;
 		butons = new Button[r][c];
+		flag = true;
 		showFields();
 	}
 
@@ -182,32 +187,35 @@ public class MatrixVisualizerWindowController {
 	public void paint(ArrayList<Integer> a, Button z[][]) {
 		// button.setStyle("-fx-background-color: #ff0000; ");
 		int count = 0;
-		for (int i = 0; i < z.length; i++) {
-			for (int j = 0; j < z[0].length; j++) {
-				try {
-					if (Integer.parseInt(z[i][j].getText()) == a.get(count)) {
-						butons[i][j].setStyle("-fx-background-color: Green");
-						count++;
-						Thread.sleep(1000);
-					} else {
+		
+		
+			for (int i = 0; i < z.length&&flag; i++) {
+				for (int j = 0; j < z[0].length&&flag; j++) {
+					try {
+						if (Integer.parseInt(z[i][j].getText()) == a.get(count)) {
+							butons[i][j].setStyle("-fx-background-color: Green");
+							count++;
+							Thread.sleep(1000);
+						} else {
+							butons[i][j].setStyle("-fx-background-color: Red");
+							Thread.sleep(1000);
+						}
+					} catch (IndexOutOfBoundsException e) {
 						butons[i][j].setStyle("-fx-background-color: Red");
-						Thread.sleep(1000);
+						continue;
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
 					}
-				} catch (IndexOutOfBoundsException e) {
-					butons[i][j].setStyle("-fx-background-color: Red");
-					continue;
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
 				}
 			}
-		}
 
+		
 	}
 	
 	@FXML
     void clear(ActionEvent event) {
-		
+		flag = false;
 		for (int i = 0; i<butons.length;i++) {
 			for (int j = 0; j < butons[0].length; j++) {
 				butons[i][j].setStyle("-fx-background-color: Transparent");
